@@ -1,5 +1,7 @@
+import sys
 import json
 import requests
+import time as t
 from tqdm import tqdm
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -11,6 +13,10 @@ global account
 # Setup
 found = []
 choice = ''
+
+def clear():
+    sys.stdout.write('\033[2J\033[H')
+    sys.stdout.flush()
 
 def whats_my_name(account2):
     with open('data.json', 'r') as d:
@@ -31,25 +37,28 @@ def whats_my_name(account2):
     for found_site in found:
         print(found_site)
     input("Press Enter To Continue")
+    clear()
 
 def main():
     while True:
-        print("""1. Username Finder
-        2.
-        3.
-        4.
-        5.
-        5.
-        7.
-        8.
-        9.
-        10.""")
+        print("""\n1. Username Finder
+2.
+3.
+4.
+5.
+5.
+7.
+8.
+9.
+10.""")
         while True:
             try:
                 choice = int(input('> '))
                 break
             except ValueError:
                 print('Please enter a number')
+                t.sleep(2)
+                clear()
 
         if choice == 1:
             print("What is the username?")
