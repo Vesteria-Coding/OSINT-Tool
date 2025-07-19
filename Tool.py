@@ -3,7 +3,6 @@ import json
 import requests
 import time as t
 from tqdm import tqdm
-from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Version: 0.1
 
@@ -13,10 +12,21 @@ global account
 # Setup
 found = []
 choice = ''
+ip = ''
 
 def clear():
     sys.stdout.write('\033[2J\033[H')
     sys.stdout.flush()
+
+def ip_lookuo(ipv4):
+    request = requests.get(f"http://ip-api.com/json/{ipv4}")
+    if request.status_code == 200:
+        json_data = json.loads(request.text)
+        if json_data["status"] == "success":
+            print(f'IP Address: {ipv4}, Country: {json_data["country"]}, Region: {json_data["regionName"]}, City: {json_data["city"]}, Latitude: {json_data["lat"]}, Longitude: {json_data["lon"]}')
+    t.sleep(1)
+    input("Press Enter To Continue")
+    clear()
 
 def whats_my_name(account2):
     with open('data.json', 'r') as d:
@@ -36,6 +46,7 @@ def whats_my_name(account2):
 
     for found_site in found:
         print(found_site)
+    t.sleep(1)
     input("Press Enter To Continue")
     clear()
 
@@ -44,7 +55,7 @@ def main():
         while True:
             try:
                 print("""1. Username Finder
-2.
+2. IP Lookup
 3.
 4.
 5.
@@ -55,6 +66,7 @@ def main():
 10.""")
                 choice = int(input('> '))
                 break
+                clear()
             except ValueError:
                 print('Please enter a number')
                 t.sleep(2)
@@ -65,7 +77,9 @@ def main():
             account = input('> ')
             whats_my_name(account)
         elif choice == 2:
-            pass
+            print("What is the IPv4 address?")
+            ip = input('> ')
+            ip_lookuo(ip)
         elif choice == 3:
             pass
         elif choice == 4:
