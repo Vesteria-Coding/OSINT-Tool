@@ -28,4 +28,4 @@ A beginner-friendly, customizable OSINT (Open Source Intelligence) tool written 
 ```bash
 git clone https://github.com/Vesteria-Coding/OSINT-Tool.git
 cd OSINT-Tool
-python Tool.py```
+python Tool.py
