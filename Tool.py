@@ -65,8 +65,8 @@ def main():
 9.
 10.""")
                 choice = int(input('> '))
-                break
                 clear()
+                break
             except ValueError:
                 print('Please enter a number')
                 t.sleep(2)
