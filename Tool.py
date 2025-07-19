@@ -3,9 +3,8 @@ import json
 import requests
 import time as t
 from tqdm import tqdm
-from concurrent.futures import ThreadPoolExecutor
 
-# Version: 0.1
+# Version: 0.2
 
 # Setup Global
 global account
