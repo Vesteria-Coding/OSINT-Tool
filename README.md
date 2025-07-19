@@ -29,4 +29,4 @@ A beginner-friendly, OSINT (Open Source Intelligence) tool written in Python. Se
 git clone https://github.com/Vesteria-Coding/OSINT-Tool.git
 cd OSINT-Tool
 pip install -r requirements.txt
-python3 Tools.py
+python Tools.py
