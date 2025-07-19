@@ -25,7 +25,7 @@ A beginner-friendly, customizable OSINT (Open Source Intelligence) tool written 
 
 ### 1. Clone the Repository
 
-```bash
 git clone https://github.com/Vesteria-Coding/OSINT-Tool.git
 cd OSINT-Tool
-python Tool.py
+pip install -r requirements.txt
+python3 Tools.py
