@@ -3,7 +3,7 @@
 > **This is a very early beta version.**  
 > Please feel free to open issues or give suggestions to improve the tool!
 
-A beginner-friendly, customizable OSINT (Open Source Intelligence) tool written in Python. Search for usernames across multiple websites and perform IP geolocation lookups — all from a terminal interface.
+A beginner-friendly, OSINT (Open Source Intelligence) tool written in Python. Search for usernames across multiple websites, perform IP geolocation lookups and more! — all from a terminal interface.
 
 ![License](https://img.shields.io/github/license/Vesteria-Coding/OSINT-Tool)
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
