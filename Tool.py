@@ -62,7 +62,7 @@ def main():
 
         if choice == 1:
             print("What is the username?")
-            account = choice('> ')
+            account = input('> ')
             whats_my_name(account)
         elif choice == 2:
             pass
