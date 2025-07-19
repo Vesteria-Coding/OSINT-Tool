@@ -1,2 +1,2 @@
 # OSINT Tool
-This is an very early bata, please feel free to give suggestions
+This is an very early beta, please feel free to give suggestions
