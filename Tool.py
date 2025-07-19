@@ -4,7 +4,7 @@ import requests
 import time as t
 from tqdm import tqdm
 
-# Version: 0.2
+# Version: 0.1
 
 # Setup Global
 global account
@@ -41,9 +41,11 @@ def whats_my_name(account2):
                 pass
             else:
                 pass
+        except KeyboardInterrupt:
+            quit(1)
         except:
             pass
-
+    clear()
     for found_site in found:
         print(found_site)
     t.sleep(1)
