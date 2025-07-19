@@ -43,32 +43,32 @@ def main():
         """)
         while True:
             try:
-                input = int(input('> '))
+                choice = int(input('> '))
                 break
             except ValueError:
                 print('Please enter a number')
 
-        if input == 1:
+        if choice == 1:
             print("What is the username?")
-            account = input('> ')
+            account = choice('> ')
             whats_my_name(account)
-        elif input == 2:
+        elif choice == 2:
             pass
-        elif input == 3:
+        elif choice == 3:
             pass
-        elif input == 4:
+        elif choice == 4:
             pass
-        elif input == 5:
+        elif choice == 5:
             pass
-        elif input == 6:
+        elif choice == 6:
             pass
-        elif input == 7:
+        elif choice == 7:
             pass
-        elif input == 8:
+        elif choice == 8:
             pass
-        elif input == 9:
+        elif choice == 9:
             pass
-        elif input == 10:
+        elif choice == 10:
             pass
 
 if __name__ == "__main__":
