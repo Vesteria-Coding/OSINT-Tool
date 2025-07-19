@@ -41,7 +41,9 @@ def whats_my_name(account2):
 
 def main():
     while True:
-        print("""\n1. Username Finder
+        while True:
+            try:
+                print("""1. Username Finder
 2.
 3.
 4.
@@ -51,8 +53,6 @@ def main():
 8.
 9.
 10.""")
-        while True:
-            try:
                 choice = int(input('> '))
                 break
             except ValueError:
@@ -62,7 +62,7 @@ def main():
 
         if choice == 1:
             print("What is the username?")
-            account = input('> ')
+            account = choice('> ')
             whats_my_name(account)
         elif choice == 2:
             pass
