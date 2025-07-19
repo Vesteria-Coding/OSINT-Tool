@@ -3,11 +3,13 @@ import json
 import requests
 import time as t
 from tqdm import tqdm
+from concurrent.futures import ThreadPoolExecutor
 
 # Version: 0.1
 
 # Setup Global
 global account
+global choice
 
 # Setup
 found = []
@@ -41,8 +43,6 @@ def whats_my_name(account2):
                 pass
             else:
                 pass
-        except KeyboardInterrupt:
-            quit(1)
         except:
             pass
     clear()
@@ -56,7 +56,8 @@ def main():
     while True:
         while True:
             try:
-                print("""1. Username Finder
+                print("""0. Quit
+1. Username Finder
 2. IP Lookup
 3.
 4.
@@ -98,6 +99,11 @@ def main():
             pass
         elif choice == 10:
             pass
+        elif choice == 0:
+            print('Stoping Program...')
+            t.sleep(1)
+            clear()
+            quit(1)
         choice = ''
 
 if __name__ == "__main__":
