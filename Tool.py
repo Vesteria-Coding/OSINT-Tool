@@ -96,6 +96,7 @@ def main():
             pass
         elif choice == 10:
             pass
+        choice = ''
 
 if __name__ == "__main__":
     main()
