@@ -4,7 +4,7 @@ import requests
 import time as t
 from tqdm import tqdm
 
-# Version: 0.1
+# Version: 0.2
 
 # Setup Global
 global account
