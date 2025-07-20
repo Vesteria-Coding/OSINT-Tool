@@ -1,10 +1,11 @@
 import sys
 import json
+import whois
 import requests
 import time as t
 from tqdm import tqdm
 
-# Version: 0.2
+# Version: 0.3
 
 # Setup Global
 global account
@@ -51,6 +52,13 @@ def whats_my_name(account2):
     input("Press Enter To Continue")
     clear()
 
+def whois2(website_url):
+    domain_info = whois.whois(website_url)
+    print(f"Registrar: {domain_info.registrar}, Creation Date: {domain_info.creation_date[0].strftime('%Y-%m-%d %H:%M:%S')}, Expiration Date: {domain_info.expiration_date[0].strftime('%Y-%m-%d %H:%M:%S')}")
+    t.sleep(1)
+    input("Press Enter To Continue")
+    clear()
+
 def main():
     while True:
         while True:
@@ -58,7 +66,7 @@ def main():
                 print("""0. Quit
 1. Username Finder
 2. IP Lookup
-3.
+3. Domain Lookup
 4.
 5.
 5.
@@ -83,7 +91,9 @@ def main():
             ip = input('> ')
             ip_lookuo(ip)
         elif choice == 3:
-            pass
+            print("What is the website url? (Example: https://google.com)")
+            url = input('> ')
+            whois2(url)
         elif choice == 4:
             pass
         elif choice == 5:
