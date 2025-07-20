@@ -15,7 +15,7 @@ A beginner-friendly, OSINT (Open Source Intelligence) tool written in Python. Se
 
 - 🔎 **Username Finder** — Search for usernames across dozens of websites
 - 🌍 **IP Lookup** — Fetch city, region, and country of any IPv4 address
-- ⚡ **Multithreaded** for faster searching - **To Be Added**
+- ⚡ **Multithreaded** for faster searching
 - 🧠 JSON-based configuration to easily add/remove sites
 - 📁 Results saved to a text file - **To Be Added**
 
