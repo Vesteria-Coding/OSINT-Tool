@@ -1,11 +1,13 @@
+import os
 import sys
 import json
 import whois
 import requests
 import time as t
 from tqdm import tqdm
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# Version: 0.3
+# Version: 0.4
 
 # Setup Global
 global account
@@ -33,21 +35,25 @@ def ip_lookuo(ipv4):
 def whats_my_name(account2):
     with open('data.json', 'r') as d:
         json_data = json.load(d)
-
-    for site in tqdm(json_data["sites"], desc="Checking sites"):
+    found = []
+    def check_site(site):
         try:
-            request = requests.get(site["url_check"].format(account=account2), timeout=10)
-            if request.status_code == site["e_code"] and site["e_string"] in request.text:
-                found.append(f'Name: {site["name"]}, Username: {account2}, URL: {site["url_check"].format(account=account2)}, Category: {site["cat"]}')
-            elif request.status_code == site["m_code"]:
-                pass
-            else:
-                pass
+            url = site["url_check"].format(account=account2)
+            response = requests.get(url, timeout=10)
+            if response.status_code == site["e_code"] and site["e_string"] in response.text:
+                return f'Name: {site["name"]}, Username: {account2}, URL: {url}, Category: {site["cat"]}'
         except:
             pass
+        return None
+    with ThreadPoolExecutor(max_workers=10) as executor:
+        futures = [executor.submit(check_site, site) for site in json_data["sites"]]
+        for future in tqdm(as_completed(futures), total=len(futures), desc="Checking sites"):
+            result = future.result()
+            if result:
+                found.append(result)
     clear()
-    for found_site in found:
-        print(found_site)
+    for site in found:
+        print(site)
     t.sleep(1)
     input("Press Enter To Continue")
     clear()
