@@ -138,5 +138,6 @@ if __name__ == "__main__":
     print_banner()
     t.sleep(2.5)
     input("Press Enter To Continue")
+    t.sleep(0.1)
     clear()
     main()
