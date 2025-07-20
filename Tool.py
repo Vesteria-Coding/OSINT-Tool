@@ -5,6 +5,7 @@ import whois
 import requests
 import time as t
 from tqdm import tqdm
+from colorama import init, Fore, Style
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # Version: 0.4
@@ -17,9 +18,21 @@ global choice
 found = []
 choice = ''
 ip = ''
+init(autoreset=True)
 
 def clear():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    sys.stdout.write('\033[2J\033[H')
+    sys.stdout.flush()
+
+def print_banner():
+    print(f"""{Fore.CYAN}{Style.BRIGHT}
+   ___  ___ ___ _  _ _____   _____ ___   ___  _    
+  / _ \/ __|_ _| \| |_   _| |_   _/ _ \ / _ \| |   
+ | (_) \__ \| || .` | | |     | || (_) | (_) | |__ 
+  \___/|___/___|_|\_| |_|     |_| \___/ \___/|____|
+{Style.RESET_ALL}
+""")
+
 
 def ip_lookuo(ipv4):
     request = requests.get(f"http://ip-api.com/json/{ipv4}")
@@ -121,5 +134,9 @@ def main():
         choice = ''
 
 if __name__ == "__main__":
+    clear()
+    print_banner()
+    t.sleep(2.5)
+    input("Press Enter To Continue")
     clear()
     main()
