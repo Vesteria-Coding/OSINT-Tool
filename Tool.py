@@ -19,8 +19,7 @@ choice = ''
 ip = ''
 
 def clear():
-    sys.stdout.write('\033[2J\033[H')
-    sys.stdout.flush()
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def ip_lookuo(ipv4):
     request = requests.get(f"http://ip-api.com/json/{ipv4}")
