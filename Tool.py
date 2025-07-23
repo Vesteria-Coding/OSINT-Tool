@@ -45,7 +45,7 @@ def ip_lookuo(ipv4):
     clear()
 
 def whats_my_name(account2):
-    with open('data.json', 'r') as d:
+    with open('data.json', 'r', encoding='utf-8') as d:
         json_data = json.load(d)
     found = []
     def check_site(site):
