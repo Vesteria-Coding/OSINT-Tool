@@ -1,3 +1,5 @@
-1. add theading,
-2. add things
-3. add option to export the data
+1. add things
+2. add option to export the data
+3. add phone number look up to it
+4. add decryption tool to it (maybe)
+5. add b46 encode/decode it it
