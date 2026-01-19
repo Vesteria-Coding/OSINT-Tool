@@ -57,7 +57,7 @@ def whats_my_name(account2):
         except:
             pass
         return None
-    with ThreadPoolExecutor(max_workers=1000) as executor:
+    with ThreadPoolExecutor(max_workers=25) as executor:
         futures = [executor.submit(check_site, site) for site in json_data["sites"]]
         for future in tqdm(as_completed(futures), total=len(futures), desc="Checking sites"):
             result = future.result()
